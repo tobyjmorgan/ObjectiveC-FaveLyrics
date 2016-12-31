@@ -87,7 +87,7 @@
 
         // add new cells
         [self.tableView beginUpdates];
-        [self performSelector:@selector(addCells) withObject:nil afterDelay:0.6];
+        [self performSelector:@selector(addCells) withObject:nil afterDelay:0.2];
     }
 }
 
