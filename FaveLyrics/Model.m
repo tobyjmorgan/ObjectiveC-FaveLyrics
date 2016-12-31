@@ -81,7 +81,7 @@ static Model *singletonObject = nil;
     }
 }
 
-- (void)removeTrackFromFavorites    :(NSInteger)trackID {
+- (void)removeTrackFromFavorites:(NSInteger)trackID {
     
     if ([self isFavoriteTrack:trackID]) {
         

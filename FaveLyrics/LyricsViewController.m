@@ -35,6 +35,10 @@
         
         [self.webView loadRequest:request];
     }
+        
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onDismissToMenu)];
+    swipe.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.webView addGestureRecognizer:swipe];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +52,9 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
+- (void)onDismissToMenu {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 
 

@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) IBOutlet UIButton *favoriteButton;
 @property (strong, nonatomic) IBOutlet UIImageView *fullHeartImage;
+@property (strong, nonatomic) IBOutlet UIView *footerView;
 
 @property (nonatomic) NSInteger trackID;
 @property (nonatomic, strong) NSString* lyricsURL;
