@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlbumsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface AlbumsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (nonatomic) NSInteger artistID;

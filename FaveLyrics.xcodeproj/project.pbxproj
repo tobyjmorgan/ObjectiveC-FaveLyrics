@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28E9ECCEA06DFE80A9465057 /* libPods-FaveLyricsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F840FC2A4418FE19A4EA0E22 /* libPods-FaveLyricsUITests.a */; };
 		6B2271C71E0C398D00B3C500 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2271C61E0C398D00B3C500 /* main.m */; };
 		6B2271CA1E0C398D00B3C500 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2271C91E0C398D00B3C500 /* AppDelegate.m */; };
 		6B2271D01E0C398D00B3C500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B2271CE1E0C398D00B3C500 /* Main.storyboard */; };
@@ -29,7 +30,9 @@
 		6BDDE5A71E1703D7009260AD /* TrackPlusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDDE5A61E1703D7009260AD /* TrackPlusCell.m */; };
 		6BDDE5AA1E1703F3009260AD /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDDE5A91E1703F3009260AD /* FavoritesViewController.m */; };
 		6BDDE5AD1E175EF9009260AD /* LyricSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDDE5AC1E175EF9009260AD /* LyricSearchViewController.m */; };
-		6BDDE5B01E176DC9009260AD /* AlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDDE5AF1E176DC9009260AD /* AlbumCell.m */; };
+		6BDDE5B31E186CA9009260AD /* AlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDDE5B21E186CA9009260AD /* AlbumCollectionViewCell.m */; };
+		6DFD140ECD2C068AB90EF89A /* libPods-FaveLyrics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B69D06A8594B51735AA027 /* libPods-FaveLyrics.a */; };
+		F7B61DD3E279CFA1C3F252B7 /* libPods-FaveLyricsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C88F987BE1C308B9B1834 /* libPods-FaveLyricsTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F790092868A320641652D83 /* Pods-FaveLyricsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaveLyricsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaveLyricsUITests/Pods-FaveLyricsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		134ACFFF5F8F05050BAEF36F /* Pods-FaveLyrics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaveLyrics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaveLyrics/Pods-FaveLyrics.debug.xcconfig"; sourceTree = "<group>"; };
 		6B2271C21E0C398D00B3C500 /* FaveLyrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaveLyrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2271C61E0C398D00B3C500 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6B2271C81E0C398D00B3C500 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,8 +100,15 @@
 		6BDDE5A91E1703F3009260AD /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		6BDDE5AB1E175EF9009260AD /* LyricSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricSearchViewController.h; sourceTree = "<group>"; };
 		6BDDE5AC1E175EF9009260AD /* LyricSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricSearchViewController.m; sourceTree = "<group>"; };
-		6BDDE5AE1E176DC9009260AD /* AlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCell.h; sourceTree = "<group>"; };
-		6BDDE5AF1E176DC9009260AD /* AlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCell.m; sourceTree = "<group>"; };
+		6BDDE5B11E186CA9009260AD /* AlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCollectionViewCell.h; sourceTree = "<group>"; };
+		6BDDE5B21E186CA9009260AD /* AlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCollectionViewCell.m; sourceTree = "<group>"; };
+		8342B41AF886C72F7B770E5E /* Pods-FaveLyricsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaveLyricsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaveLyricsTests/Pods-FaveLyricsTests.release.xcconfig"; sourceTree = "<group>"; };
+		8F39148C9404B3B8766F6FB4 /* Pods-FaveLyricsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaveLyricsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaveLyricsTests/Pods-FaveLyricsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		964D32A923C5327A974E9C93 /* Pods-FaveLyrics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaveLyrics.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaveLyrics/Pods-FaveLyrics.release.xcconfig"; sourceTree = "<group>"; };
+		B63C88F987BE1C308B9B1834 /* libPods-FaveLyricsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FaveLyricsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B69D06A8594B51735AA027 /* libPods-FaveLyrics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FaveLyrics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD165724A6819FD08687C0A2 /* Pods-FaveLyricsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaveLyricsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaveLyricsUITests/Pods-FaveLyricsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F840FC2A4418FE19A4EA0E22 /* libPods-FaveLyricsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FaveLyricsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DFD140ECD2C068AB90EF89A /* libPods-FaveLyrics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7B61DD3E279CFA1C3F252B7 /* libPods-FaveLyricsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,12 +132,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28E9ECCEA06DFE80A9465057 /* libPods-FaveLyricsUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65D442E92768136DCE6DC2EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				134ACFFF5F8F05050BAEF36F /* Pods-FaveLyrics.debug.xcconfig */,
+				964D32A923C5327A974E9C93 /* Pods-FaveLyrics.release.xcconfig */,
+				8F39148C9404B3B8766F6FB4 /* Pods-FaveLyricsTests.debug.xcconfig */,
+				8342B41AF886C72F7B770E5E /* Pods-FaveLyricsTests.release.xcconfig */,
+				0F790092868A320641652D83 /* Pods-FaveLyricsUITests.debug.xcconfig */,
+				DD165724A6819FD08687C0A2 /* Pods-FaveLyricsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6B2271B91E0C398C00B3C500 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +159,8 @@
 				6B2271DE1E0C398D00B3C500 /* FaveLyricsTests */,
 				6B2271E91E0C398D00B3C500 /* FaveLyricsUITests */,
 				6B2271C31E0C398D00B3C500 /* Products */,
+				65D442E92768136DCE6DC2EB /* Pods */,
+				D0FBD621E320ADD8AA7B7378 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,8 +186,8 @@
 				6B2271CE1E0C398D00B3C500 /* Main.storyboard */,
 				6B2272131E14CF0E00B3C500 /* ArtistSearchViewController.h */,
 				6B2272141E14CF0E00B3C500 /* ArtistSearchViewController.m */,
-				6BDDE5AE1E176DC9009260AD /* AlbumCell.h */,
-				6BDDE5AF1E176DC9009260AD /* AlbumCell.m */,
+				6BDDE5B11E186CA9009260AD /* AlbumCollectionViewCell.h */,
+				6BDDE5B21E186CA9009260AD /* AlbumCollectionViewCell.m */,
 				6B2272161E1583F400B3C500 /* AlbumsViewController.h */,
 				6B2272171E1583F400B3C500 /* AlbumsViewController.m */,
 				6B2272191E15ADD300B3C500 /* TracksViewController.h */,
@@ -233,6 +263,16 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
+		D0FBD621E320ADD8AA7B7378 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6B69D06A8594B51735AA027 /* libPods-FaveLyrics.a */,
+				B63C88F987BE1C308B9B1834 /* libPods-FaveLyricsTests.a */,
+				F840FC2A4418FE19A4EA0E22 /* libPods-FaveLyricsUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,9 +280,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B2271EF1E0C398D00B3C500 /* Build configuration list for PBXNativeTarget "FaveLyrics" */;
 			buildPhases = (
+				46A1E1FFD2092B023AC0F10B /* [CP] Check Pods Manifest.lock */,
 				6B2271BE1E0C398C00B3C500 /* Sources */,
 				6B2271BF1E0C398C00B3C500 /* Frameworks */,
 				6B2271C01E0C398C00B3C500 /* Resources */,
+				88B18C014562C9791951228C /* [CP] Embed Pods Frameworks */,
+				D51E9A370334A79097FC7B8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,9 +300,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B2271F21E0C398D00B3C500 /* Build configuration list for PBXNativeTarget "FaveLyricsTests" */;
 			buildPhases = (
+				0342FEF960FD5342A2FDA00E /* [CP] Check Pods Manifest.lock */,
 				6B2271D71E0C398D00B3C500 /* Sources */,
 				6B2271D81E0C398D00B3C500 /* Frameworks */,
 				6B2271D91E0C398D00B3C500 /* Resources */,
+				5727493CA5E822526F4169C8 /* [CP] Embed Pods Frameworks */,
+				802970031767DF32DF992D95 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,9 +321,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B2271F51E0C398D00B3C500 /* Build configuration list for PBXNativeTarget "FaveLyricsUITests" */;
 			buildPhases = (
+				5AE9EB14BA45EF4F517A7804 /* [CP] Check Pods Manifest.lock */,
 				6B2271E21E0C398D00B3C500 /* Sources */,
 				6B2271E31E0C398D00B3C500 /* Frameworks */,
 				6B2271E41E0C398D00B3C500 /* Resources */,
+				7E9F04411DB588B3BD093031 /* [CP] Embed Pods Frameworks */,
+				682C7CB96C9DC534089DFB08 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,6 +413,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0342FEF960FD5342A2FDA00E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		46A1E1FFD2092B023AC0F10B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5727493CA5E822526F4169C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaveLyricsTests/Pods-FaveLyricsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AE9EB14BA45EF4F517A7804 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		682C7CB96C9DC534089DFB08 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaveLyricsUITests/Pods-FaveLyricsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E9F04411DB588B3BD093031 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaveLyricsUITests/Pods-FaveLyricsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		802970031767DF32DF992D95 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaveLyricsTests/Pods-FaveLyricsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88B18C014562C9791951228C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaveLyrics/Pods-FaveLyrics-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D51E9A370334A79097FC7B8A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaveLyrics/Pods-FaveLyrics-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6B2271BE1E0C398C00B3C500 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -371,6 +558,7 @@
 			files = (
 				6B22721B1E15ADD300B3C500 /* TracksViewController.m in Sources */,
 				6B2272121E1424DF00B3C500 /* MenuViewController.m in Sources */,
+				6BDDE5B31E186CA9009260AD /* AlbumCollectionViewCell.m in Sources */,
 				6B2271CA1E0C398D00B3C500 /* AppDelegate.m in Sources */,
 				6BDDE5A01E16E823009260AD /* TrackPlus.m in Sources */,
 				6BDDE5AD1E175EF9009260AD /* LyricSearchViewController.m in Sources */,
@@ -380,7 +568,6 @@
 				6B2272021E0DDB5000B3C500 /* Album.m in Sources */,
 				6B2272081E12F24D00B3C500 /* Endpoint.m in Sources */,
 				6BDDE5A71E1703D7009260AD /* TrackPlusCell.m in Sources */,
-				6BDDE5B01E176DC9009260AD /* AlbumCell.m in Sources */,
 				6B2272181E1583F400B3C500 /* AlbumsViewController.m in Sources */,
 				6B2272151E14CF0E00B3C500 /* ArtistSearchViewController.m in Sources */,
 				6B2271C71E0C398D00B3C500 /* main.m in Sources */,
@@ -531,6 +718,7 @@
 		};
 		6B2271F01E0C398D00B3C500 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 134ACFFF5F8F05050BAEF36F /* Pods-FaveLyrics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 646297YD5V;
@@ -544,6 +732,7 @@
 		};
 		6B2271F11E0C398D00B3C500 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 964D32A923C5327A974E9C93 /* Pods-FaveLyrics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 646297YD5V;
@@ -557,6 +746,7 @@
 		};
 		6B2271F31E0C398D00B3C500 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F39148C9404B3B8766F6FB4 /* Pods-FaveLyricsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 646297YD5V;
@@ -570,6 +760,7 @@
 		};
 		6B2271F41E0C398D00B3C500 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8342B41AF886C72F7B770E5E /* Pods-FaveLyricsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 646297YD5V;
@@ -583,6 +774,7 @@
 		};
 		6B2271F61E0C398D00B3C500 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F790092868A320641652D83 /* Pods-FaveLyricsUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 646297YD5V;
 				INFOPLIST_FILE = FaveLyricsUITests/Info.plist;
@@ -595,6 +787,7 @@
 		};
 		6B2271F71E0C398D00B3C500 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD165724A6819FD08687C0A2 /* Pods-FaveLyricsUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 646297YD5V;
 				INFOPLIST_FILE = FaveLyricsUITests/Info.plist;

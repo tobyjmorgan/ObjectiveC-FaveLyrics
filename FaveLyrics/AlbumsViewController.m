@@ -11,7 +11,8 @@
 #import "Album.h"
 #import "Endpoint.h"
 #import "TracksViewController.h"
-#import "AlbumCell.h"
+#import "AlbumCollectionViewCell.h"
+#import "SAMCache.h"
 
 @interface AlbumsViewController ()
 
@@ -30,8 +31,8 @@
     self.activityIndicator.hidden = YES;
     [self.activityIndicator stopAnimating];
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
     
     [self performFetch];
 }
@@ -62,7 +63,7 @@
         [self.activityIndicator stopAnimating];
         
         self.results = [[endpoint albumsFromResults:results] mutableCopy];
-        [self.tableView reloadData];
+        [self.collectionView reloadData];
     }];
 }
 
@@ -85,30 +86,32 @@
 
 
 /////////////////////////////////////////////
-// MARK: UITableViewDataSource
+// MARK: UICollectionViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     return self.results.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    AlbumCell *cell = (AlbumCell *)[tableView dequeueReusableCellWithIdentifier:@"AlbumCell"];
+    AlbumCollectionViewCell *cell = (AlbumCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"AlbumCell" forIndexPath:indexPath];
     
+    cell.containingView.layer.cornerRadius = 10;
+
     Album *album = [self.results objectAtIndex:indexPath.row];
     cell.albumTitleLabel.text = album.name;
-    cell.albumVanityLabel.text = album.vanityID;
-    cell.trackCount.text = [NSString stringWithFormat:@"Tracks: %ld", (long)album.trackCount];
+    cell.trackCount.text = [NSString stringWithFormat:@"%ld", (long)album.trackCount];
+    cell.photoURLString = album.coverArt100;
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     Album *album = [self.results objectAtIndex:indexPath.row];
     
