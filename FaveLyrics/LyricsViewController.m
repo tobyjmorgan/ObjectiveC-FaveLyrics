@@ -24,9 +24,13 @@
 
     if ([model isFavoriteTrack:self.trackID]) {
         self.fullHeartImage.hidden = NO;
+        self.emptyHeart.hidden = YES;
     } else {
         self.fullHeartImage.hidden = YES;
+        self.emptyHeart.hidden = NO;
     }
+    
+    [self startHeartBeat];
     
     if (self.lyricsURL != nil && self.lyricsURL.length > 5) {
         
@@ -35,7 +39,7 @@
         
         [self.webView loadRequest:request];
     }
-        
+    
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onDismissToMenu)];
     swipe.direction = UISwipeGestureRecognizerDirectionRight;
     [self.webView addGestureRecognizer:swipe];
@@ -54,6 +58,14 @@
 
 - (void)onDismissToMenu {
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)startHeartBeat {
+    
+    [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionAutoreverse | UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveEaseInOut animations:^{
+        
+        self.fullHeartImage.transform = CGAffineTransformMakeScale(0.8,0.8);
+    } completion:nil];
 }
 
 
@@ -86,11 +98,13 @@
         
         [model removeTrackFromFavorites:self.trackID];
         self.fullHeartImage.hidden = YES;
+        self.emptyHeart.hidden = NO;
         
     } else {
         
         [model addTrackToFavorites:self.trackID];
         self.fullHeartImage.hidden = NO;
+        self.emptyHeart.hidden = YES;
     }
 }
 
