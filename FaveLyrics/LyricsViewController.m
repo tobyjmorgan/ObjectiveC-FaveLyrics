@@ -40,9 +40,8 @@
         [self.webView loadRequest:request];
     }
     
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onDismissToMenu)];
-    swipe.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.webView addGestureRecognizer:swipe];
+    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchWasOut:)];
+    [self.webView addGestureRecognizer:pinch];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +55,29 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
+- (void)pinchWasOut:(UIPinchGestureRecognizer *)gestureRecognizer {
+    
+    if (gestureRecognizer.scale < 1) {
+        [self onShrink];
+    }
+}
+
+- (void)onShrink {
+    
+    [UIView animateWithDuration:0.75 animations:^{
+        
+        self.view.transform = CGAffineTransformMakeScale(0.1, 0.1);
+        self.view.alpha = 0;
+        
+    } completion:^(BOOL finished) {
+        
+        [self performSelector:@selector(onDismissToMenu) withObject:nil afterDelay:0.4];
+        
+    }];
+}
+
 - (void)onDismissToMenu {
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

@@ -11,6 +11,7 @@
 #import "Track.h"
 #import "Endpoint.h"
 #import "LyricsViewController.h"
+#import "StandardCell.h"
 
 @interface TracksViewController ()
 
@@ -100,10 +101,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AlbumCell"];
+    StandardCell *cell = (StandardCell *)[tableView dequeueReusableCellWithIdentifier:@"AlbumCell"];
     
     Track *track = [self.results objectAtIndex:indexPath.row];
-    cell.textLabel.text = track.name;
+    cell.titleLabel.text = track.name;
     
     return cell;
 }

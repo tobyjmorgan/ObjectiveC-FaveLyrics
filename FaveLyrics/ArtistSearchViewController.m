@@ -11,6 +11,7 @@
 #import "Endpoint.h"
 #import "Artist.h"
 #import "AlbumsViewController.h"
+#import "StandardCell.h"
 
 @interface ArtistSearchViewController ()
 
@@ -109,10 +110,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    StandardCell *cell = (StandardCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     Artist *artist = [self.results objectAtIndex:indexPath.row];
-    cell.textLabel.text = artist.name;
+    cell.titleLabel.text = artist.name;
     
     return cell;
 }

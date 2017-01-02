@@ -31,6 +31,7 @@
 		6BDDE5AA1E1703F3009260AD /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDDE5A91E1703F3009260AD /* FavoritesViewController.m */; };
 		6BDDE5AD1E175EF9009260AD /* LyricSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDDE5AC1E175EF9009260AD /* LyricSearchViewController.m */; };
 		6BDDE5B31E186CA9009260AD /* AlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDDE5B21E186CA9009260AD /* AlbumCollectionViewCell.m */; };
+		6BF4F41F1E1A23C30073A103 /* StandardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF4F41E1E1A23C30073A103 /* StandardCell.m */; };
 		6DFD140ECD2C068AB90EF89A /* libPods-FaveLyrics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B69D06A8594B51735AA027 /* libPods-FaveLyrics.a */; };
 		F7B61DD3E279CFA1C3F252B7 /* libPods-FaveLyricsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C88F987BE1C308B9B1834 /* libPods-FaveLyricsTests.a */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,8 @@
 		6BDDE5AC1E175EF9009260AD /* LyricSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricSearchViewController.m; sourceTree = "<group>"; };
 		6BDDE5B11E186CA9009260AD /* AlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCollectionViewCell.h; sourceTree = "<group>"; };
 		6BDDE5B21E186CA9009260AD /* AlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCollectionViewCell.m; sourceTree = "<group>"; };
+		6BF4F41D1E1A23C30073A103 /* StandardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardCell.h; sourceTree = "<group>"; };
+		6BF4F41E1E1A23C30073A103 /* StandardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardCell.m; sourceTree = "<group>"; };
 		8342B41AF886C72F7B770E5E /* Pods-FaveLyricsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaveLyricsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaveLyricsTests/Pods-FaveLyricsTests.release.xcconfig"; sourceTree = "<group>"; };
 		8F39148C9404B3B8766F6FB4 /* Pods-FaveLyricsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaveLyricsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaveLyricsTests/Pods-FaveLyricsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		964D32A923C5327A974E9C93 /* Pods-FaveLyrics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaveLyrics.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaveLyrics/Pods-FaveLyrics.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				6BDDE5B11E186CA9009260AD /* AlbumCollectionViewCell.h */,
 				6BDDE5B21E186CA9009260AD /* AlbumCollectionViewCell.m */,
 				6B2272161E1583F400B3C500 /* AlbumsViewController.h */,
+				6BF4F41D1E1A23C30073A103 /* StandardCell.h */,
+				6BF4F41E1E1A23C30073A103 /* StandardCell.m */,
 				6B2272171E1583F400B3C500 /* AlbumsViewController.m */,
 				6B2272191E15ADD300B3C500 /* TracksViewController.h */,
 				6B22721A1E15ADD300B3C500 /* TracksViewController.m */,
@@ -572,6 +577,7 @@
 				6B2272151E14CF0E00B3C500 /* ArtistSearchViewController.m in Sources */,
 				6B2271C71E0C398D00B3C500 /* main.m in Sources */,
 				6BDDE5A41E16F2A9009260AD /* Model.m in Sources */,
+				6BF4F41F1E1A23C30073A103 /* StandardCell.m in Sources */,
 				6BDDE59D1E161BEE009260AD /* LyricsViewController.m in Sources */,
 				6B22720B1E133C8D00B3C500 /* APIClient.m in Sources */,
 			);
