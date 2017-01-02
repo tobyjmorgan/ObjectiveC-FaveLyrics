@@ -24,6 +24,8 @@
 
 @implementation Model
 
+////////////////////////////////////////////////
+// singleton code
 static Model *singletonObject = nil;
 
 + (id) sharedInstance
@@ -36,6 +38,7 @@ static Model *singletonObject = nil;
     return singletonObject;
 }
 
+// stops init being called inadvertently - just returns the shared instance instead
 - (id)init
 {
     if (! singletonObject) {
@@ -46,7 +49,11 @@ static Model *singletonObject = nil;
     
     return singletonObject;
 }
+////////////////////////////////////////////////
 
+
+
+// return all favorite tracks from user defaults
 - (NSArray *)allFavoriteTracks {
     
     NSArray *favorites = [self.defaults objectForKey:UserDefaultsKey_Favorites];
@@ -56,6 +63,7 @@ static Model *singletonObject = nil;
     return favorites;
 }
 
+// returns if specified track is a favorite
 - (BOOL)isFavoriteTrack:(NSInteger)trackID {
     
     for (NSNumber *favorite in [self allFavoriteTracks]) {
@@ -69,6 +77,7 @@ static Model *singletonObject = nil;
     return NO;
 }
 
+// adds the specified track to favorites, if not already there
 - (void)addTrackToFavorites:(NSInteger)trackID {
     
     if (![self isFavoriteTrack:trackID]) {
@@ -82,6 +91,7 @@ static Model *singletonObject = nil;
     }
 }
 
+// removes the specified track from favorites, if present
 - (void)removeTrackFromFavorites:(NSInteger)trackID {
     
     if ([self isFavoriteTrack:trackID]) {
@@ -95,6 +105,7 @@ static Model *singletonObject = nil;
     }
 }
 
+// has the app been run before (offer welcome)
 - (BOOL)beenRunBefore {
     BOOL beenRunBefore = [self.defaults boolForKey:UserDefaultsKey_BeenRunBefore];
     

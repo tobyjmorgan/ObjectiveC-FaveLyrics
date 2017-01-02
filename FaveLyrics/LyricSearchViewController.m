@@ -70,6 +70,7 @@
 
         } else {
             
+            // UIView category for presenting network alert messages
             [self presentNetworkAlertMessage:message];
         }
     }];

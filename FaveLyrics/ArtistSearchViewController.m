@@ -58,6 +58,7 @@
     [super viewWillDisappear:animated];
 }
 
+// fetch request to support this table view
 - (void)performFetchWithQueryString:(NSString *)queryString {
     
     self.activityIndicator.hidden = NO;
@@ -79,6 +80,7 @@
             
         } else {
             
+            // UIView category for presenting network alert messages
             [self presentNetworkAlertMessage:message];
         }
     }];

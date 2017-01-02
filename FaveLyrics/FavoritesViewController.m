@@ -68,6 +68,9 @@
         
         APIClient *client = [APIClient sharedInstance];
         
+        // fetch each favorite one-by-one, this API did not provide any chaining options
+        // just appending the result to the other results each time
+        // not idel, but best option given API limitations
         for (NSNumber *favorite in favorites) {
             
             Endpoint *endpoint = [[Endpoint alloc] initAsTrackGetWithTrackID:[favorite integerValue]];
@@ -89,6 +92,7 @@
                     
                 } else {
                     
+                    // UIView category for presenting network alert messages
                     [self presentNetworkAlertMessage:message];
                 }
             }];

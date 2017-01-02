@@ -32,6 +32,10 @@
     
     [self startHeartBeat];
     
+    // N.B. using web view to load the web page that has the lyrics
+    // the API only provided a stub of the lyrics in development mode
+    // plus it seemed like a good way to vary things up a bit
+    
     if (self.lyricsURL != nil && self.lyricsURL.length > 5) {
         
         NSURL *url = [NSURL URLWithString:self.lyricsURL];
@@ -55,6 +59,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
+// determine type of pinch gesture
 - (void)pinchWasOut:(UIPinchGestureRecognizer *)gestureRecognizer {
     
     if (gestureRecognizer.scale < 1) {
@@ -62,6 +67,7 @@
     }
 }
 
+// perform shrink animation
 - (void)onShrink {
     
     [UIView animateWithDuration:0.75 animations:^{
@@ -71,6 +77,8 @@
         
     } completion:^(BOOL finished) {
         
+        // had to delay this, pop was getting called before you could see the animation, even though
+        // the pop was being called on completion.
         [self performSelector:@selector(onDismissToMenu) withObject:nil afterDelay:0.4];
         
     }];
@@ -81,6 +89,7 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+// heart beat animation for favorite button
 - (void)startHeartBeat {
     
     [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionAutoreverse | UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveEaseInOut animations:^{

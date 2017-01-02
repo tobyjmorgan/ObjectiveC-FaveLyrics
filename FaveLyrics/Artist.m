@@ -31,6 +31,7 @@
         
         NSMutableArray *genres = [[NSMutableArray alloc] init];
         
+        // cycle through both genre arrays adding to genres array (flattening)
         for (NSDictionary *dict in [primaryGenres arrayByAddingObjectsFromArray:secondaryGenres]) {
             
             NSString *genreName = [dict valueForKey:HTTPKey_music_genre_name];

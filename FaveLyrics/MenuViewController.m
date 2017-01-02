@@ -52,6 +52,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    // may need to refresh the menu if all favorites have been cleared out
     if ([self refreshMenuOptions] && self.currentPageIndex == 0) {
         
         self.currentMenuPage = [self.menuOptions[self.currentPageIndex] mutableCopy];
@@ -75,6 +76,7 @@
     [super viewWillDisappear:animated];
 }
 
+// welcome message on first visit to app
 - (void)performWelcome {
     
     Model *model = [Model sharedInstance];
@@ -89,6 +91,7 @@
     }
 }
 
+// menu options change based on whether user has any favorites
 - (BOOL)refreshMenuOptions {
     
     NSMutableArray *oldPageOne = self.menuOptions[0];
@@ -109,6 +112,7 @@
     return !(newPageOneCount == oldPageOneCount);
 }
 
+// clear out old menu options one by one (nice animation)
 - (void)deleteCells {
 
     if (self.currentMenuPage.count > 0) {
@@ -134,6 +138,7 @@
     }
 }
 
+// add in new menu options one by one (nice animation)
 - (void)addCells {
 
     NSArray *newPage = self.menuOptions[self.currentPageIndex];
@@ -184,15 +189,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    if (self.nextOptions.count > 0) {
-//        // do nothing, we are still doing the buttons
-//        return;
-//    }
-    
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     NSString *label = cell.textLabel.text;
     
+    // determine which option was selected and perform appropriate action
     if ([label isEqualToString:MenuButtonMyLyrics]) {
         
         [self performSegueWithIdentifier:@"Favorites" sender:self];

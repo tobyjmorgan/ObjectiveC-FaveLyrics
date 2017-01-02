@@ -25,6 +25,10 @@ static NSString *baseURL = @"https://api.musixmatch.com/ws/1.1";
 
 @implementation Endpoint
 
+- (instancetype)init {
+    return nil;
+}
+
 - (instancetype)initAsArtistSearchWithArtistNameQuery:(NSString *)nameQuery {
     
     self = [super init];

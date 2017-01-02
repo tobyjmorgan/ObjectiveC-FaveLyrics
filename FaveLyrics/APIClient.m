@@ -22,6 +22,8 @@
 
 @implementation APIClient
 
+////////////////////////////////////////////////
+// singleton code
 static APIClient *singletonObject = nil;
 
 + (id) sharedInstance
@@ -34,6 +36,7 @@ static APIClient *singletonObject = nil;
     return singletonObject;
 }
 
+// stops init being called inadvertently - just returns the shared instance instead
 - (id)init
 {
     if (! singletonObject) {
@@ -44,6 +47,7 @@ static APIClient *singletonObject = nil;
     
     return singletonObject;
 }
+////////////////////////////////////////////////
 
 - (void)fetchRequestWithEndpoint:(Endpoint * _Nonnull)endpoint completionHandler:(void (^ _Nonnull)(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable results))completion {
     
