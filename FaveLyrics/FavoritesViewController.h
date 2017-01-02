@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+NetworkAlert.h"
 
 @interface FavoritesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

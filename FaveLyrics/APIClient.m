@@ -45,7 +45,7 @@ static APIClient *singletonObject = nil;
     return singletonObject;
 }
 
-- (void)fetchRequestWithEndpoint:(Endpoint * _Nonnull)endpoint completionHandler:(void (^ _Nonnull)(BOOL success, NSDictionary * _Nullable results))completion {
+- (void)fetchRequestWithEndpoint:(Endpoint * _Nonnull)endpoint completionHandler:(void (^ _Nonnull)(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable results))completion {
     
     NSLog(@"Request: %@", [endpoint.urlForEndpoint absoluteString]);
     
@@ -97,7 +97,7 @@ static APIClient *singletonObject = nil;
         }        
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(success, responseDict);
+            completion(success, message, responseDict);
         });
     }];
     

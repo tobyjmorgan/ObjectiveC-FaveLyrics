@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+NetworkAlert.h"
 
 @interface TracksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

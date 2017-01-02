@@ -13,6 +13,6 @@
 @interface APIClient : NSObject
 
 + sharedInstance;
-- (void)fetchRequestWithEndpoint:(Endpoint * _Nonnull)endpoint completionHandler:(void (^ _Nonnull)(BOOL success, NSDictionary * _Nullable results))completion;
+- (void)fetchRequestWithEndpoint:(Endpoint * _Nonnull)endpoint completionHandler:(void (^ _Nonnull)(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable results))completion;
 
 @end

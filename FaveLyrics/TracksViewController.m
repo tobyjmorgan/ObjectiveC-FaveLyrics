@@ -57,13 +57,20 @@
     
     Endpoint *endpoint = [[Endpoint alloc] initAsTracksGetWithAlbumID:self.albumID];
     
-    [client fetchRequestWithEndpoint:endpoint completionHandler:^(BOOL success, NSDictionary * _Nullable results) {
+    [client fetchRequestWithEndpoint:endpoint completionHandler:^(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable results) {
         
-        self.activityIndicator.hidden = YES;
-        [self.activityIndicator stopAnimating];
-        
-        self.results = [[endpoint tracksFromResults:results] mutableCopy];
-        [self.tableView reloadData];
+        if (success) {
+            
+            self.activityIndicator.hidden = YES;
+            [self.activityIndicator stopAnimating];
+            
+            self.results = [[endpoint tracksFromResults:results] mutableCopy];
+            [self.tableView reloadData];
+            
+        } else {
+            
+            [self presentNetworkAlertMessage:message];
+        }
     }];
 }
 

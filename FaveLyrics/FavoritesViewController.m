@@ -72,18 +72,25 @@
             
             Endpoint *endpoint = [[Endpoint alloc] initAsTrackGetWithTrackID:[favorite integerValue]];
             
-            [client fetchRequestWithEndpoint:endpoint completionHandler:^(BOOL success, NSDictionary * _Nullable results) {
+            [client fetchRequestWithEndpoint:endpoint completionHandler:^(BOOL success, NSString * _Nullable message, NSDictionary * _Nullable results) {
                 
                 self.activityIndicator.hidden = YES;
                 [self.activityIndicator stopAnimating];
                 
-                TrackPlus *track = [endpoint trackPlusFromResults:results];
-                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.results.count inSection:0];
-                [self.results addObject:track];
-                
-                [self.tableView beginUpdates];
-                [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-                [self.tableView endUpdates];
+                if (success) {
+                 
+                    TrackPlus *track = [endpoint trackPlusFromResults:results];
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.results.count inSection:0];
+                    [self.results addObject:track];
+                    
+                    [self.tableView beginUpdates];
+                    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    [self.tableView endUpdates];
+                    
+                } else {
+                    
+                    [self presentNetworkAlertMessage:message];
+                }
             }];
         }
     }
