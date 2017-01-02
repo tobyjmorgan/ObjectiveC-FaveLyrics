@@ -15,5 +15,6 @@
 - (BOOL)isFavoriteTrack:(NSInteger)trackID;
 - (void)addTrackToFavorites:(NSInteger)trackID;
 - (void)removeTrackFromFavorites:(NSInteger)trackID;
+- (BOOL)beenRunBefore;
 
 @end

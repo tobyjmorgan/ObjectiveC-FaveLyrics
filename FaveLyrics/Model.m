@@ -13,6 +13,7 @@
 #import "Model.h"
 
 #define UserDefaultsKey_Favorites       @"Favorites"
+#define UserDefaultsKey_BeenRunBefore   @"BeenRunBefore"
 
 @interface Model()
 
@@ -92,6 +93,14 @@ static Model *singletonObject = nil;
         [self.defaults setObject:(NSArray *)oldFavorites forKey:UserDefaultsKey_Favorites];
         [self.defaults synchronize];
     }
+}
+
+- (BOOL)beenRunBefore {
+    BOOL beenRunBefore = [self.defaults boolForKey:UserDefaultsKey_BeenRunBefore];
+    
+    [self.defaults setBool:YES forKey:UserDefaultsKey_BeenRunBefore];
+    
+    return beenRunBefore;
 }
 
 

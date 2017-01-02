@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "Model.h"
 
 #define MenuButtonMyLyrics @"My Fave Lyrics"
 #define MenuButtonNewLyrics @"Find New Lyrics"
@@ -16,9 +17,10 @@
 
 @interface MenuViewController ()
 
-@property (nonatomic, strong) NSMutableArray *menuOptions;
-@property (nonatomic, strong) NSMutableArray *nextOptions;
-@property (nonatomic, strong) NSMutableArray *prevOptions;
+@property (nonatomic, strong) NSArray *menuOptions;
+@property (nonatomic, strong) NSMutableArray *currentMenuPage;
+@property (nonatomic) NSInteger currentPageIndex;
+@property (nonatomic) NSInteger lastPageIndex;
 
 @end
 
@@ -27,16 +29,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.menuOptions = [[NSMutableArray alloc] init];
-    self.nextOptions = [[NSMutableArray alloc] init];
-    self.prevOptions = [[NSMutableArray alloc] init];
-    [self.menuOptions addObjectsFromArray:@[MenuButtonMyLyrics, MenuButtonNewLyrics]];
-
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
     self.headerView.layer.cornerRadius = 20.0;
+    
+    [self refreshMenuOptions];
+    self.currentPageIndex = 0;
+    self.currentMenuPage = [self.menuOptions[self.currentPageIndex] mutableCopy];
+    
+    [self.tableView reloadData];
+
+    [self performWelcome];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +52,11 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self.tableView reloadData];
+    if ([self refreshMenuOptions] && self.currentPageIndex == 0) {
+        
+        self.currentMenuPage = [self.menuOptions[self.currentPageIndex] mutableCopy];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -66,21 +75,55 @@
     [super viewWillDisappear:animated];
 }
 
+- (void)performWelcome {
+    
+    Model *model = [Model sharedInstance];
+    
+    if (!model.beenRunBefore) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Welcome" message:@"This app is designed to allow you to find the lyrics to your favorite songs. You can 'favorite' any lyrics you love by tappng the heart in the lower right corner of the Lyrics Screen." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"Cool!" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+- (BOOL)refreshMenuOptions {
+    
+    NSMutableArray *oldPageOne = self.menuOptions[0];
+    NSInteger oldPageOneCount = oldPageOne.count;
+    
+    Model *model = [Model sharedInstance];
+
+    NSInteger newPageOneCount;
+    
+    if ([model allFavoriteTracks].count > 0) {
+        self.menuOptions = @[@[MenuButtonMyLyrics, MenuButtonNewLyrics], @[MenuButtonGoBack, MenuButtonFindArtist, MenuButtonFindLyric]];
+        newPageOneCount = 2;
+    } else {
+        self.menuOptions = @[@[MenuButtonNewLyrics], @[MenuButtonGoBack, MenuButtonFindArtist, MenuButtonFindLyric]];
+        newPageOneCount = 1;
+    }
+    
+    return !(newPageOneCount == oldPageOneCount);
+}
+
 - (void)deleteCells {
 
-    if (self.menuOptions.count > 0 ) {
-        
+    if (self.currentMenuPage.count > 0) {
+
         // we need the index BEFORE the action has occurred - since we will delete it
-        NSInteger lastItemIndex = self.menuOptions.count-1;
+        NSInteger lastItemIndex = self.currentMenuPage.count-1;
         
-        [self.menuOptions removeLastObject];
-        
+        [self.currentMenuPage removeLastObject];
+
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastItemIndex inSection:0];
         
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         
         [self deleteCells];
-        
+    
     } else {
         
         [self.tableView endUpdates];
@@ -92,25 +135,23 @@
 }
 
 - (void)addCells {
-    
-    if (self.nextOptions.count > 0) {
+
+    NSArray *newPage = self.menuOptions[self.currentPageIndex];
+    NSInteger currentCount = self.currentMenuPage.count;
+    if (currentCount < newPage.count) {
+
+        [self.currentMenuPage addObject:newPage[currentCount]];
         
-        [self.menuOptions addObject:[self.nextOptions firstObject]];
-        [self.nextOptions removeObjectAtIndex:0];
-        
-        // we need the index AFTER the action has occurred - since we will insert it
-        NSInteger lastItemIndex = self.menuOptions.count-1;
-        
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastItemIndex inSection:0];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:currentCount inSection:0];
         
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-
-        [self addCells];
         
+        [self addCells];
+
     } else {
         
         [self.tableView endUpdates];
-
+        
         // done - do nothing
     }
 }
@@ -127,7 +168,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.menuOptions.count;
+    return self.currentMenuPage.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -135,17 +176,18 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = self.menuOptions[indexPath.row];
+    
+    cell.textLabel.text = self.currentMenuPage[indexPath.row];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (self.nextOptions.count > 0) {
-        // do nothing, we are still doing the buttons
-        return;
-    }
+//    if (self.nextOptions.count > 0) {
+//        // do nothing, we are still doing the buttons
+//        return;
+//    }
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
@@ -158,8 +200,8 @@
     } else if ([label isEqualToString:MenuButtonNewLyrics]) {
         
         // replace buttons with new set
-        self.prevOptions = [self.menuOptions mutableCopy];
-        [self.nextOptions addObjectsFromArray:@[MenuButtonGoBack, MenuButtonFindArtist, MenuButtonFindLyric]];
+        self.lastPageIndex = self.currentPageIndex;
+        self.currentPageIndex = 1;
         
         [self.tableView beginUpdates];
         [self deleteCells];
@@ -167,8 +209,9 @@
     } else if ([label isEqualToString:MenuButtonGoBack]) {
         
         // replace buttons with set before last change
-        self.nextOptions = self.prevOptions;
-        
+        self.lastPageIndex = self.currentPageIndex;
+        self.currentPageIndex = 0;
+
         [self.tableView beginUpdates];
         [self deleteCells];
         
