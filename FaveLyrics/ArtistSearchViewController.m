@@ -11,12 +11,13 @@
 #import "Endpoint.h"
 #import "Artist.h"
 #import "AlbumsViewController.h"
-#import "StandardCell.h"
+#import "StandardDisclosureCell.h"
+#import "ArtistDetailViewController.h"
 
 @interface ArtistSearchViewController ()
 
 @property (nonatomic, strong) NSMutableArray *results;
-@property (nonatomic) NSInteger lastArtistSelected;
+@property (nonatomic, strong) Artist *lastArtistSelected;
 
 @end
 
@@ -98,7 +99,13 @@
         
         AlbumsViewController *vc = (AlbumsViewController *)segue.destinationViewController;
         
-        vc.artistID = self.lastArtistSelected;
+        vc.artistID = self.lastArtistSelected.artistID;
+        
+    } else if ([segue.identifier isEqualToString:@"ArtistDetail"]) {
+        
+        ArtistDetailViewController *vc = (ArtistDetailViewController *)segue.destinationViewController;
+        
+        vc.artist = self.lastArtistSelected;
     }
 }
 
@@ -119,10 +126,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    StandardCell *cell = (StandardCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    StandardDisclosureCell *cell = (StandardDisclosureCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     Artist *artist = [self.results objectAtIndex:indexPath.row];
     cell.titleLabel.text = artist.name;
+    [cell.disclosureButton addTarget:self action:@selector(onDisclosure:) forControlEvents:UIControlEventTouchUpInside];
+    cell.disclosureButton.tag = indexPath.row;
     
     return cell;
 }
@@ -130,11 +139,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Artist *artist = [self.results objectAtIndex:indexPath.row];
-    self.lastArtistSelected = artist.artistID;
-    
+    self.lastArtistSelected = artist;
+        
     [self performSegueWithIdentifier:@"Albums" sender:self];
 }
 
+- (void)onDisclosure:(UIButton *)sender {
+    
+    Artist *artist = [self.results objectAtIndex:sender.tag];
+    self.lastArtistSelected = artist;
+    
+    [self performSegueWithIdentifier:@"ArtistDetail" sender:self];
+}
 
 
 

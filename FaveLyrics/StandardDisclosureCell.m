@@ -1,14 +1,14 @@
 //
-//  StandardCell.m
+//  StandardDisclosureCell.m
 //  FaveLyrics
 //
 //  Created by redBred LLC on 1/2/17.
 //  Copyright © 2017 redBred. All rights reserved.
 //
 
-#import "StandardCell.h"
+#import "StandardDisclosureCell.h"
 
-@implementation StandardCell
+@implementation StandardDisclosureCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -21,6 +21,4 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)onDetail:(id)sender {
-}
 @end
