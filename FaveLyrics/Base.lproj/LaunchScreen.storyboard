@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="e0k-zs-avr">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,17 +11,24 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="F0Q-MA-LHJ">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="e0k-zs-avr" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="B87-N7-5by"/>
+                        <viewControllerLayoutGuide type="bottom" id="1bg-5Z-MQI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="SDm-dg-52g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FaveLyricsIconLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oIb-ez-Oi5">
+                                <rect key="frame" x="107" y="268" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7hK-fT-hau"/>
+                                    <constraint firstAttribute="height" constant="200" id="epP-2W-bWv"/>
+                                </constraints>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge full" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-pQ-Sut">
                                 <rect key="frame" x="20" y="659" width="252" height="57"/>
                                 <constraints>
@@ -29,43 +36,23 @@
                                     <constraint firstAttribute="width" constant="252" id="eC6-LX-lIW"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHX-0h-cdJ">
-                                <rect key="frame" x="87" y="248" width="240" height="240"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FaveLyricsIconLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oIb-ez-Oi5">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="oIb-ez-Oi5" firstAttribute="top" secondItem="iHX-0h-cdJ" secondAttribute="top" id="2UJ-VI-WaZ"/>
-                                    <constraint firstAttribute="width" constant="240" id="8fb-iY-Z1l"/>
-                                    <constraint firstAttribute="trailing" secondItem="oIb-ez-Oi5" secondAttribute="trailing" id="LpM-Oa-ov9"/>
-                                    <constraint firstItem="oIb-ez-Oi5" firstAttribute="leading" secondItem="iHX-0h-cdJ" secondAttribute="leading" id="df6-Jp-qrC"/>
-                                    <constraint firstAttribute="bottom" secondItem="oIb-ez-Oi5" secondAttribute="bottom" id="gqC-g9-Jhu"/>
-                                    <constraint firstAttribute="height" constant="240" id="mEv-TO-a3u"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ybQ-pQ-Sut" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="FuE-Xk-y64"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ybQ-pQ-Sut" secondAttribute="bottom" constant="20" id="Gyj-TX-VPa"/>
-                            <constraint firstItem="iHX-0h-cdJ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="L9n-zc-8Xm"/>
-                            <constraint firstItem="iHX-0h-cdJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nkL-zk-44I"/>
+                            <constraint firstItem="ybQ-pQ-Sut" firstAttribute="leading" secondItem="SDm-dg-52g" secondAttribute="leadingMargin" id="baD-87-aMe"/>
+                            <constraint firstItem="oIb-ez-Oi5" firstAttribute="centerX" secondItem="SDm-dg-52g" secondAttribute="centerX" id="ecI-V9-Fnc"/>
+                            <constraint firstItem="oIb-ez-Oi5" firstAttribute="centerY" secondItem="SDm-dg-52g" secondAttribute="centerY" id="hbD-9S-Ggm"/>
+                            <constraint firstItem="1bg-5Z-MQI" firstAttribute="top" secondItem="ybQ-pQ-Sut" secondAttribute="bottom" constant="20" id="mkS-gy-7GD"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="circleView" destination="Ze5-6b-2t3" id="beA-gd-WKk"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SUC-29-Rb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="277" y="416"/>
         </scene>
     </scenes>
     <resources>
-        <image name="FaveLyricsIconLogo" width="600" height="600"/>
+        <image name="FaveLyricsIconLogo" width="300" height="300"/>
         <image name="badge full" width="251" height="57"/>
     </resources>
 </document>
